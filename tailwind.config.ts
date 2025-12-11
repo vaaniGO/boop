@@ -59,8 +59,9 @@ export default {
         },
         boop: {
           blue: "hsl(var(--boop-blue))",
+          purple: "hsl(var(--boop-purple))",
           orange: "hsl(var(--boop-orange))",
-          pink: "hsl(var(--boop-pink))",
+          green: "hsl(var(--boop-green))",
         },
         code: {
           bg: "hsl(var(--code-bg))",
@@ -72,9 +73,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
-        serif: ['Crimson Pro', 'serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'monospace'],
       },
       borderRadius: {
         lg: "var(--radius)",

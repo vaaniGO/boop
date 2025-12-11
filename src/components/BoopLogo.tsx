@@ -16,9 +16,9 @@ const sizeMap = {
 export const BoopLogo = ({ size = "lg", animated = true, className }: BoopLogoProps) => {
   const letters = [
     { letter: "B", color: "text-boop-blue", delay: "0ms" },
-    { letter: "O", color: "text-boop-orange", delay: "100ms" },
+    { letter: "O", color: "text-boop-purple", delay: "100ms" },
     { letter: "O", color: "text-boop-orange", delay: "200ms" },
-    { letter: "P", color: "text-boop-pink", delay: "300ms" },
+    { letter: "P", color: "text-boop-green", delay: "300ms" },
   ];
 
   return (

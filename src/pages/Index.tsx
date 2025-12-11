@@ -1,15 +1,9 @@
+import { Layout } from "@/components/Layout";
 import { BoopLogo } from "@/components/BoopLogo";
 import { CodeBlock } from "@/components/CodeBlock";
-import { QuickLinkCard } from "@/components/QuickLinkCard";
 import { BoopSection } from "@/components/BoopSection";
 import { DefinitionCard } from "@/components/DefinitionCard";
 import { 
-  Trophy, 
-  BookOpen, 
-  CheckCircle, 
-  TestTube, 
-  FileText, 
-  Github,
   ArrowRight,
   Users
 } from "lucide-react";
@@ -36,7 +30,7 @@ const divCode = `let div a b =
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <Layout>
       {/* Hero Section */}
       <header className="relative overflow-hidden">
         {/* Gradient Background */}
@@ -54,13 +48,13 @@ const Index = () => {
           />
         </div>
 
-        <div className="relative container mx-auto px-4 pt-32 pb-20">
+        <div className="relative container mx-auto px-4 pt-24 pb-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
               <BoopLogo size="xl" />
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-serif font-bold text-foreground mb-4 animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 animate-fade-in">
               Write Right Code!
             </h1>
             
@@ -70,60 +64,18 @@ const Index = () => {
               <span className="text-border">|</span>
               <span>Ashoka University</span>
             </div>
-
-            {/* Quick Links */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
-              <QuickLinkCard 
-                title="Results" 
-                href="#results" 
-                icon={Trophy}
-                variant="blue"
-              />
-              <QuickLinkCard 
-                title="Usage" 
-                href="#usage" 
-                icon={BookOpen}
-                variant="orange"
-              />
-              <QuickLinkCard 
-                title="Correctness" 
-                href="#correctness" 
-                icon={CheckCircle}
-                variant="pink"
-              />
-              <QuickLinkCard 
-                title="Testing" 
-                href="#testing" 
-                icon={TestTube}
-                variant="blue"
-              />
-              <QuickLinkCard 
-                title="Publication" 
-                href="https://arxiv.org/abs/2507.22085" 
-                icon={FileText}
-                variant="orange"
-                external
-              />
-              <QuickLinkCard 
-                title="GitHub" 
-                href="https://github.com/vaaniGO/ICSLang/tree/main" 
-                icon={Github}
-                variant="pink"
-                external
-              />
-            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-5xl">
         {/* Correctness Definition */}
         <section id="correctness" className="py-16">
           <div className="flex items-center gap-3 mb-6">
             <ArrowRight className="w-5 h-5 text-boop-blue" />
-            <h2 className="text-3xl font-serif font-semibold">
-              Correctness <span className="text-sm font-sans text-muted-foreground italic">(informal)</span>
+            <h2 className="text-3xl font-bold">
+              Correctness <span className="text-sm font-normal text-muted-foreground italic">(informal)</span>
             </h2>
           </div>
           
@@ -157,7 +109,7 @@ const Index = () => {
 
         {/* Overview */}
         <section id="overview" className="py-16 border-t border-border">
-          <h2 className="text-3xl font-serif font-semibold mb-8">Overview</h2>
+          <h2 className="text-3xl font-bold mb-8">Overview</h2>
           
           <p className="text-muted-foreground mb-6">Consider the following problem:</p>
           
@@ -172,7 +124,7 @@ const Index = () => {
           </p>
 
           <div className="mb-12">
-            <h3 className="text-xl font-serif font-semibold mb-4">Operations on nat in OCaml</h3>
+            <h3 className="text-xl font-bold mb-4">Operations on nat in OCaml</h3>
             <CodeBlock 
               code={heroCode}
               title="nat_operations.ml"
@@ -196,6 +148,7 @@ const Index = () => {
             letter="B"
             title="Blueprint"
             subtitle="The specifications that describe correctness"
+            color="blue"
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
               The blueprint outlines the specifications of the problem that describe its correctness. This formalism compels students to reason explicitly about program correctness before engaging with implementation details.
@@ -214,17 +167,18 @@ const Index = () => {
             letter="O"
             title="Operational Steps"
             subtitle="Human-comprehensible steps to solve the problem"
+            color="purple"
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
               These are human-comprehensible steps to solve the problem at hand. Later, they can be seen as an accurate and complete translation of the program.
             </p>
-            <div className="bg-boop-orange/5 border border-boop-orange/20 rounded-xl p-6">
+            <div className="bg-boop-purple/5 border border-boop-purple/20 rounded-xl p-6">
               <h4 className="font-semibold text-foreground mb-3">Operational Steps for div:</h4>
               <ol className="space-y-2 text-muted-foreground list-decimal list-inside">
-                <li>Check if <code className="text-boop-orange">b = Zero</code>. If so, return <code className="text-boop-orange">None</code></li>
-                <li>Initialize quotient <code className="text-boop-orange">q = Zero</code></li>
-                <li>While <code className="text-boop-orange">a ≥ b</code>: subtract b from a, increment q</li>
-                <li>Return <code className="text-boop-orange">Some (q, a)</code> where a is now the remainder</li>
+                <li>Check if <code className="text-boop-purple">b = Zero</code>. If so, return <code className="text-boop-purple">None</code></li>
+                <li>Initialize quotient <code className="text-boop-purple">q = Zero</code></li>
+                <li>While <code className="text-boop-purple">a ≥ b</code>: subtract b from a, increment q</li>
+                <li>Return <code className="text-boop-purple">Some (q, a)</code> where a is now the remainder</li>
               </ol>
             </div>
           </BoopSection>
@@ -233,6 +187,7 @@ const Index = () => {
             letter="O"
             title="OCaml Code"
             subtitle="Implementation in OCaml syntax"
+            color="orange"
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
               This is the implementation of the Operational Steps in OCaml syntax (or any other programming language). We keep OCaml in the name because it results in a fun acronym!
@@ -248,17 +203,18 @@ const Index = () => {
             letter="P"
             title="Proof"
             subtitle="Proof of correctness of the program"
+            color="green"
           >
             <p className="text-muted-foreground leading-relaxed mb-6">
               Finally, this is a proof of correctness of the program. It shows that the implementation (OCaml code), obeys the specifications (Blueprint).
             </p>
-            <div className="bg-boop-pink/5 border border-boop-pink/20 rounded-xl p-6">
+            <div className="bg-boop-green/5 border border-boop-green/20 rounded-xl p-6">
               <h4 className="font-semibold text-foreground mb-3">Proof sketch for div:</h4>
               <p className="text-muted-foreground mb-4">
-                <strong>Invariant:</strong> At each recursive call, <code className="text-boop-pink">a = original_a - b × q</code>
+                <strong>Invariant:</strong> At each recursive call, <code className="text-boop-green">a = original_a - b × q</code>
               </p>
               <p className="text-muted-foreground">
-                <strong>Termination:</strong> The value of <code className="text-boop-pink">a</code> strictly decreases with each recursive call (by <code className="text-boop-pink">b</code>), and the recursion stops when <code className="text-boop-pink">a &lt; b</code>.
+                <strong>Termination:</strong> The value of <code className="text-boop-green">a</code> strictly decreases with each recursive call (by <code className="text-boop-green">b</code>), and the recursion stops when <code className="text-boop-green">a &lt; b</code>.
               </p>
             </div>
           </BoopSection>
@@ -266,24 +222,14 @@ const Index = () => {
 
         {/* Conclusion */}
         <section className="py-16 border-t border-border">
-          <div className="bg-gradient-to-br from-boop-blue/10 via-boop-orange/10 to-boop-pink/10 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-br from-boop-blue/10 via-boop-purple/10 to-boop-orange/10 rounded-2xl p-8 text-center">
             <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
               This sequence embodies the principle of <span className="font-semibold">correct-by-construction programming</span>, where careful specification and methodical decomposition lead naturally to verifiable implementations. By internalizing this systematic approach, students develop the discipline necessary for tackling complex computational problems with confidence and rigour.
             </p>
           </div>
         </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4 text-center">
-          <BoopLogo size="md" className="justify-center mb-4" />
-          <p className="text-muted-foreground text-sm">
-            © 2024 BOOP: Write Right Code! — Ashoka University
-          </p>
-        </div>
-      </footer>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

@@ -7,35 +7,41 @@ interface BoopSectionProps {
   subtitle: string;
   children: ReactNode;
   className?: string;
+  color?: "blue" | "purple" | "orange" | "green";
 }
 
-const letterColors = {
-  B: {
+const colorMap = {
+  blue: {
     bg: "bg-boop-blue/10",
     text: "text-boop-blue",
     border: "border-boop-blue/30",
   },
-  O: {
+  purple: {
+    bg: "bg-boop-purple/10",
+    text: "text-boop-purple",
+    border: "border-boop-purple/30",
+  },
+  orange: {
     bg: "bg-boop-orange/10",
     text: "text-boop-orange",
     border: "border-boop-orange/30",
   },
-  P: {
-    bg: "bg-boop-pink/10",
-    text: "text-boop-pink",
-    border: "border-boop-pink/30",
+  green: {
+    bg: "bg-boop-green/10",
+    text: "text-boop-green",
+    border: "border-boop-green/30",
   },
 };
 
-export const BoopSection = ({ letter, title, subtitle, children, className }: BoopSectionProps) => {
-  const colors = letterColors[letter];
+export const BoopSection = ({ letter, title, subtitle, children, className, color = "blue" }: BoopSectionProps) => {
+  const colors = colorMap[color];
 
   return (
     <section className={cn("py-16", className)}>
       <div className="flex items-start gap-6 mb-8">
         <div className={cn(
           "w-20 h-20 rounded-2xl flex items-center justify-center",
-          "text-5xl font-serif font-bold",
+          "text-5xl font-bold",
           colors.bg,
           colors.text,
           "border",
@@ -44,7 +50,7 @@ export const BoopSection = ({ letter, title, subtitle, children, className }: Bo
           {letter}
         </div>
         <div>
-          <h2 className="text-3xl font-serif font-semibold text-foreground mb-1">
+          <h2 className="text-3xl font-bold text-foreground mb-1">
             {title}
           </h2>
           <p className="text-muted-foreground">
