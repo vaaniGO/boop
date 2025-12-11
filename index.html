@@ -1,26 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BOOP: Write Right Code! | Correct-by-Construction Programming</title>
-    <meta name="description" content="BOOP is a systematic methodology for teaching correct programming through Blueprint, Operational Steps, OCaml Code, and Proof. Learn to write provably correct code." />
-    <meta name="author" content="Aalok Thakkar, Vaani Goenka - Ashoka University" />
-    <meta name="keywords" content="BOOP, correct programming, OCaml, formal verification, computer science education, Ashoka University" />
 
-    <meta property="og:title" content="BOOP: Write Right Code!" />
-    <meta property="og:description" content="A systematic methodology for teaching correct-by-construction programming" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOP: Write Right Code! | Correct-by-Construction Programming</title>
+  <meta name="description"
+    content="BOOP is a systematic methodology for teaching correct programming through Blueprint, Operational Steps, OCaml Code, and Proof. Learn to write provably correct code." />
+  <meta name="author" content="Aalok Thakkar, Vaani Goenka - Ashoka University" />
+  <meta name="keywords"
+    content="BOOP, correct programming, OCaml, formal verification, computer science education, Ashoka University" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BOOP: Write Right Code!" />
-    <meta name="twitter:description" content="A systematic methodology for teaching correct-by-construction programming" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+  <meta property="og:title" content="BOOP: Write Right Code!" />
+  <meta property="og:description" content="A systematic methodology for teaching correct-by-construction programming" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BOOP: Write Right Code!" />
+  <meta name="twitter:description"
+    content="A systematic methodology for teaching correct-by-construction programming" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <script>
+    (function () {
+      var redirect = sessionStorage.getItem('redirect');
+      sessionStorage.removeItem('redirect');
+      if (redirect && redirect !== location.pathname) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

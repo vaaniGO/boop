@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-defineConfig(({ mode }) => ({
+export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -15,9 +15,5 @@ defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: mode === "production" ? "/boop-code-refine/" : "/", // Add this line
 }));
-
-export default defineConfig({
-  plugins: [react()],
-  base: '/boop-code-refine/', // Add this line
-})
