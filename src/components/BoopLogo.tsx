@@ -22,7 +22,7 @@ export const BoopLogo = ({ size = "lg", animated = true, className }: BoopLogoPr
   ];
 
   return (
-    <div className={cn("flex items-center font-bold font-serif", sizeMap[size], className)}>
+    <div className={cn("flex items-center font-bold font-sans-serif", sizeMap[size], className)}>
       {letters.map((item, index) => (
         <span
           key={index}
@@ -31,7 +31,7 @@ export const BoopLogo = ({ size = "lg", animated = true, className }: BoopLogoPr
             "transition-transform duration-300 hover:scale-110",
             animated && "animate-slide-up"
           )}
-          style={{ 
+          style={{
             animationDelay: item.delay,
             animationFillMode: "backwards"
           }}
