@@ -15,5 +15,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === "production" ? "/boop-code-refine/" : "/", // Add this line
+  base: mode === "production" ? "/boop/" : "/", // Add this line
 }));
