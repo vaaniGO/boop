@@ -15,7 +15,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="container mx-auto px-4 text-center">
           <BoopLogo size="sm" className="justify-center mb-3" animated={false} />
           <p className="text-muted-foreground text-sm">
-            Supported by Mphasis AI & Applied Tech Lab
+            © 2024 BOOP: Write Right Code! — Ashoka University
           </p>
         </div>
       </footer>
